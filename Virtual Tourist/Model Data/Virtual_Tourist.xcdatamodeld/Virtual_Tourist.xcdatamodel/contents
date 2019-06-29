@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
+        <attribute name="createdIn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="URI" syncable="YES"/>
+        <relationship name="relatedToPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pin" inverseName="realtedToPin" inverseEntity="Pin" syncable="YES"/>
+    </entity>
+    <entity name="Pin" representedClassName="Pin" syncable="YES" codeGenerationType="class">
+        <attribute name="createdIn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="realtedToPin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="relatedToPhoto" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Pin" positionX="-356.7109375" positionY="-121.30859375" width="128" height="103"/>
+        <element name="Photo" positionX="36" positionY="-45" width="128" height="105"/>
+    </elements>
+</model>
